@@ -1,1 +1,11 @@
 <div class="sample">laskjdasjdajsdadj</div>
+<h3 [innerText]='buses'></h3>
+
+<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue"/>
+
+
+<div *ngFor="#source of buses" >
+    <div>{{source.source}}</div>
+    </div>
+
+
