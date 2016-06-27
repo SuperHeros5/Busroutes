@@ -1,0 +1,49 @@
+{
+  "name": "busestracker",
+  "version": "1.0.0",
+  "description": "bus finder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node_modules/.bin/typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperHeros5/Busroutes.git"
+  },
+  "keywords": [
+    "busfinder",
+    "transportation",
+    "adibatla"
+  ],
+  "author": "BATMAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperHeros5/Busroutes/issues"
+  },
+  "homepage": "https://github.com/SuperHeros5/Busroutes#readme",
+  "dependencies": {
+    "@angular/common": "^2.0.0-rc.1",
+    "@angular/compiler": "^2.0.0-rc.1",
+    "@angular/core": "^2.0.0-rc.1",
+    "@angular/platform-browser": "^2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+    "bootstrap": "^3.3.6",
+    "es6-shim": "0.35.0",
+    "ng2-bootstrap": "1.0.17",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.29",
+    "typings": "0.8.1",
+    "zone.js": "0.6.12"
+  },
+  "devDependencies": {
+    "concurrently": "2.0.0",
+    "lite-server": "2.2.0",
+    "typescript": "1.8.10"
+  }
+}
