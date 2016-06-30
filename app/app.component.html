@@ -3,9 +3,10 @@
 
 <label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue"/>
 
+sdsf
+<busroutes-list [buseslist]="buses" (selectroute)="selectedroute($event)"></busroutes-list>
 
-<div *ngFor="#source of buses" >
-    <div>{{source.source}}</div>
-    </div>
+
+    
 
 
