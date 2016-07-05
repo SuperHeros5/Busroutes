@@ -9,7 +9,16 @@
         <meta http-equiv="content-type" content="text/html,charset=UTF-8">
            <!--<meta http-equiv="refresh" content="10"> -->
         <title>Bus Routes</title>
-        <link  link="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+        <link  rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
           <!-- 1. Load libraries -->
             <script src="node_modules/es6-shim/es6-shim.min.js"></script>
             <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -34,11 +43,13 @@
       },
       map: {
         moment: 'node_modules/moment/moment.js',
-        "@angular/core": "node_modules/@angular/core/bundles/core.umd.js",
-        "@angular/common": "node_modules/@angular/common/bundles/common.umd.js",
-        "@angular/compiler": "node_modules/@angular/compiler/bundles/compiler.umd.js",
-        "@angular/platform-browser": "node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
-        "@angular/platform-browser-dynamic": "node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js",
+        "@angular/core": "node_modules/@angular/core/core.umd.js",
+        "@angular/common": "node_modules/@angular/common/common.umd.js",
+        "@angular/compiler": "node_modules/@angular/compiler/compiler.umd.js",
+        "@angular/platform-browser": "node_modules/@angular/platform-browser/platform-browser.umd.js",
+        "@angular/platform-browser-dynamic": "node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js",
+        "@angular/http" : "node_modules/@angular/http/http.umd.js",
+        "@angular/router" : "node_modules/@angular/router/router.umd.js",
         // ng2-bootstrap specifics
         "@angular/core/src/facade/lang": "node_modules/@angular/core/src/facade/lang.js",
 //        "@angular/platform-browser/src/animate/animation_builder": "node_modules/@angular/platform-browser/src/animate/animation_builder.js"
@@ -51,6 +62,8 @@
     </head>
     <!-- 3. Display the application -->
     <body>
+        <div class="container">
         <bus-route>loading....</bus-route>
+        </div>
     </body>
 </html>

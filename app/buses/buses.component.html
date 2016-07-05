@@ -1,0 +1,11 @@
+
+
+<!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>-->
+<select name="Source" value="Source"  id="places" (change)="getBusDetails()" >
+    <option *ngFor="#source of busessources" value="{{source}}">{{source}}</option>
+    
+</select>
+
+
+
+<busroutes-list [buseslist]="buses" (selectroute)="selectedroute($event)"></busroutes-list>

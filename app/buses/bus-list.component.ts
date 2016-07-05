@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output , EventEmitter} from '@angular/core';
 import { ReversePipe } from '../shared/reverse.pipe';
+import { LoggerService } from '../shared/logger.service';
 
 @Component({
   
@@ -11,11 +12,12 @@ import { ReversePipe } from '../shared/reverse.pipe';
 export class BusListComponent implements OnInit {
     @Input() buseslist;
     @Output() selectroute= new EventEmitter();
-    constructor() { }
+    constructor(private _log:LoggerService) { }
 
     ngOnInit() { }
  public details=function(source){
          alert(source);
+         this._log.log(source);
         this.selectroute.emit(source);
      }
 }

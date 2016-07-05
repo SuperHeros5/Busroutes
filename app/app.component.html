@@ -1,12 +1,13 @@
-<div class="sample">laskjdasjdajsdadj</div>
-<h3 [innerText]='buses'></h3>
-
-<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue"/>
-
-sdsf
-<busroutes-list [buseslist]="buses" (selectroute)="selectedroute($event)"></busroutes-list>
-
-
+<!--<ul>
+    <li><a [routerLink]="['from']">From</a></li>
+    <li><a [routerLink]="['to']">To</a></li>
+    </ul>-->
+    <header></header>
+    <search></search>
+    <div>
+    <router-outlet></router-outlet>
+    </div>
     
-
-
+      <footer class="footer">
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>

@@ -1,3 +1,28 @@
-<div *ngFor="#source of buseslist" >
+
+<!-- <div *ngFor="#source of buseslist" >
     <div (click)="details(source.source)">{{source.source | reversePipe}}</div>
-    </div>
+    </div>-->
+    
+     <div class="row marketing">
+      <!-- <div class="col-lg-6"> -->
+         
+        <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>Station</th>
+            <th>Timings</th>
+            <th>Route Numbers</th>
+            
+            <th>Landmark</th>
+          </tr>
+          <tr  *ngFor="#timingsarray of buseslist?.timings">
+            <td >{{buseslist.place}}</td>
+            <td>{{timingsarray?.time}}</td>
+            <td><span *ngFor="#routes of timingsarray?.routes">{{routes}}<br/></span></td>
+            
+            <td>{{timingsarray?.landmark}}</td>
+          </tr>
+        </table>
+        </div>
+     </div>
+     
