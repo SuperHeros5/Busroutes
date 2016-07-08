@@ -1,10 +1,15 @@
  <div class="jumbotron">
         <div class="row">
-    <div class="col-sm-6 text-left">
-        <a class="btn btn-lg btn-success" href="#" role="button" [routerLink]="['from']">From Adibatla</a>
+    <div class="col-sm-12">
+        <img *ngIf="flip" src="../../toofficefinal.gif" alt="home"/>
+        <img *ngIf="!flip" src="../../tohomefinal.gif" alt="home"/>
+        
     </div>
-    <div class="col-sm-6 text-right">
-        <a class="btn btn-lg btn-success" href="#" role="button" [routerLink]="['to']">Towards Adibatla</a>
+    <div class="col-sm-12">
+        <span style="float:left;">Home</span>
+        <a  href="#" role="button" [routerLink]="['from']" class="btn btn-primary" (click)="flipmethod()">Flip</a>
+        <span style="float:right;">Office</span>
     </div>
+    
 </div>
       </div>
