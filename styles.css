@@ -41,6 +41,9 @@ body {
 .jumbotron  img{
     width:95%;
 }
+.displayblock{
+    display: block;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {

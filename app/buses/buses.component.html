@@ -1,11 +1,28 @@
 
 
-<!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>-->
-<select name="Source" value="Source"  id="places" (change)="getBusDetails()" >
+<!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>
+<select name="Source" value="Source" class="form-control"  id="places" (change)="getBusDetails()" >
     <option *ngFor="#source of busessources" value="{{source}}">{{source}}</option>
     
 </select>
 
+<div class="dropdown " >
+ 
+    <label for="source">Source</label><input id="source" class="form-control input-lg" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>
+    <ul class="dropdown-menu displayblock" *ngIf="sourcevalue">
+        <li *ngFor="#source of busessources | sourceFilter : sourcevalue" ><a>{{source}}</a></li>
+        
+    </ul>
+</div>-->
+<div class="col-lg-5">
+<input type="text" name="route" list="busroutes" class="form-control input-sm" placeholder="Enter source" value="" [(ngModel)]="sourcevalue" (change)="getBusDetails()">
+<datalist id="busroutes" class="dropdown-menu">
+    <select name="Source" value="Source" class="form-control"  id="places" (change)="getBusDetails()" >
+    <option *ngFor="#source of busessources" [value]="source"><a (click)="getBusDetails()">{{source}}</a></option>
+    
+    </select>
+</datalist>
+</div>
 
 
 <busroutes-list [buseslist]="buses" (selectroute)="selectedroute($event)"></busroutes-list>

@@ -2,6 +2,8 @@ import { Component, OnInit,ViewChild , OnDestroy ,OnChanges} from '@angular/core
 import { BusService } from './bus.service';
 import { BusListComponent } from './bus-list.component';
 import { Observable} from 'rxjs/Rx';
+import { sourceFilter } from '../shared/sourcefilter.pipe';
+import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
 
 
 @Component({
@@ -9,9 +11,10 @@ import { Observable} from 'rxjs/Rx';
     selector : 'buseslist',
     templateUrl: 'app/buses/buses.component.html',
      styleUrls:['app/buses/buses.component.css'],
-    directives:[BusListComponent]
+    directives:[BusListComponent],
+    pipes:[sourceFilter]
 })
-export class BusesComponent implements OnInit,OnDestroy {
+export class BusesComponent implements OnInit,OnDestroy,OnChanges {
    public buses;
     public sourcevalue;
     public busessources;
@@ -35,14 +38,18 @@ export class BusesComponent implements OnInit,OnDestroy {
         // alert(this.buses);
          // this._busservices.getBuses();
     }
+    ngOnChanges(){
+        
+    }
     
     ngOnDestroy(){
         
     }
     public getBusDetails(){
-      let places=document.getElementById("places");
-     let selectedvalue = places.options[places.selectedIndex].innerHTML;
-     this._busservices.getSelectedSource(selectedvalue)
+        alert();
+     // let places=document.getElementById("places");
+    // let selectedvalue = places.options[places.selectedIndex].innerHTML;
+     this._busservices.getSelectedSource(this.sourcevalue)
      .subscribe(data => {this.buses=data;console.log(data);},error => console.log(error),()=>console.log("completed"));
        
         }
