@@ -42,7 +42,7 @@
          <img src="../../busimage.png" height="180px" width="200px" class="busimage">
          
         
-         <h4 class="routes bluecolor"> <span class="">Route No:</span><span *ngFor="#routes of timingsarray?.routes"> {{routes}},</span></h4>
+         <h4 class="routes bluecolor"> <span class="">Buses:</span><span *ngFor="#routes of timingsarray?.routes;#i=index;#j=last;"> {{routes}}<span *ngIf="!j">,</span></span></h4>
        
          <h3 class="timings bluecolor">{{timingsarray?.time}}</h3>
          
