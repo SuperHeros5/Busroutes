@@ -1,21 +1,53 @@
 
-
-<!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>
-<select name="Source" value="Source" class="form-control"  id="places" (change)="getBusDetails()" >
+<div class="jumbotron">
+    <div class="row">
+<!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>-->
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+   <label for="srcplace"  class="pull-left">From</label> 
+<select name="Source" value="Source" class="form-control"  id="srcplace" (change)="getSrcBusDetails()" >
+    <option [disabled]="!srcloc" >Select From location</option>
+    <option value="Adibatla">Adibatla</option>
     <option *ngFor="#source of busessources" value="{{source}}">{{source}}</option>
     
 </select>
 
-<div class="dropdown " >
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <label for="destplace" class="pull-left">To</label> 
+<select name="Source" value="Source" class="form-control"  id="destplace"  [disabled]="srcloc" (change)="getDstBusDetails()" >
+    <option [disabled]="!destloc">Select to location</option>
+    <option value="Adibatla" [disabled]="!destadi">Adibatla</option>
+    <option *ngFor="#source of busessources" value="{{source}}"  [disabled]="!destloc">{{source}}</option>
+    
+</select>
+
+</div>
+    </div>
+</div>
+<!--
+<div class="dropdown" >
  
     <label for="source">Source</label><input id="source" class="form-control input-lg" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>
-    <ul class="dropdown-menu displayblock" *ngIf="sourcevalue">
-        <li *ngFor="#source of busessources | sourceFilter : sourcevalue" ><a>{{source}}</a></li>
+    <ul class="dropdown-menu displayblock" *ngIf="sourcevalue" role="menu">
+        <li *ngFor="#source of busessources | sourceFilter : sourcevalue" ><a (click)="getBusDetails()">{{source}}</a></li>
         
     </ul>
-</div>-->
+</div>
+ <div class="btn-group" dropdown keyboardNav="true">
+    <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" dropdownToggle>
+      Dropdown with keyboard navigation <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" dropdownMenu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+      <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+  </div>
+
 <div class="col-lg-5">
-<input type="text" name="route" list="busroutes" class="form-control input-sm" placeholder="Enter source" value="" [(ngModel)]="sourcevalue" (change)="getBusDetails()">
+<input type="text" name="route" list="busroutes" class="form-control input-sm" placeholder="Start typing your location or select from the dropdown" value="" [(ngModel)]="sourcevalue" (change)="getBusDetails()">
 <datalist id="busroutes" class="dropdown-menu">
     <select name="Source" value="Source" class="form-control"  id="places" (change)="getBusDetails()" >
     <option *ngFor="#source of busessources" [value]="source"><a (click)="getBusDetails()">{{source}}</a></option>
@@ -23,6 +55,6 @@
     </select>
 </datalist>
 </div>
+-->
 
-
-<busroutes-list [buseslist]="buses" (selectroute)="selectedroute($event)"></busroutes-list>
+<busroutes-list [buseslist]="buses" [sourceselected]="sourcevalue" (selectroute)="selectedroute($event)"></busroutes-list>

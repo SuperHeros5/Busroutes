@@ -11,6 +11,7 @@ import { LoggerService } from '../shared/logger.service';
 })
 export class BusListComponent implements OnInit {
     @Input() buseslist;
+    @Input() sourceselected;
     @Output() selectroute= new EventEmitter();
     constructor(private _log:LoggerService) { }
 

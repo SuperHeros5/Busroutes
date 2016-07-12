@@ -3,8 +3,8 @@
     <div (click)="details(source.source)">{{source.source | reversePipe}}</div>
     </div>-->
     
-     <div class="row marketing col-lg-12">
-      <!-- <div class="col-lg-6"> -->
+  <!--   <div class="row marketing col-lg-12">
+     <div class="col-lg-6"> 
          
         <div class="table-responsive">
         <table class="table">
@@ -24,72 +24,38 @@
           </tr>
         </table>
         </div>
-     </div>
+     </div>-->
+      <div class="beforeloading">
+   <div class=" col-lg-12" *ngIf="!buseslist">  
+       
+       Please select from location
+       
+   </div>
      
-     <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
+     <div class="row">
+   <div class=" col-lg-12">  <h2>{{sourceselected}}</h2>
+     <h2><span></span>{{buseslist?.landmark}}</h2>
+   </div>
+     </div>
+     <div class="row">
+     <div class="image col-lg-6 col-md-6  col-sm-6 " *ngFor="#timingsarray of buseslist?.timings">
+         <img src="../../busimage.png" height="180px" width="200px" class="busimage">
          
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
+        
+         <h4 class="routes bluecolor"> <span class="">Route No:</span><span *ngFor="#routes of timingsarray?.routes"> {{routes}},</span></h4>
+       
+         <h3 class="timings bluecolor">{{timingsarray?.time}}</h3>
          
          
      </div>
-             <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
-         
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
-         
-         
      </div>
-             <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
-         
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
-         
-         
      </div>
-             <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
+          <!--     <div class="image col-lg-6 col-md-6  col-sm-6 ">
+         <img src="../../busimage.png" height="180px" width="200px" class="busimage">
          
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
-         
-         
-     </div>
-     
-      <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
-         
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
+          <h4 class="routes bluecolor"> <span class="">Route No:</span> 1,2,3,Deccan Park Shuttle</h4>
+       
+         <h3 class="timings bluecolor">9:00 AM</h3>
          
          
-     </div>
-     
-      <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
-         
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
-         
-         
-     </div>
-     
-      <div class="image col-lg-3 col-md-4  col-sm-4 col-xs-6">
-         <img src="../../bussymbol.jpg" height="180px" width="200px" class="busimage">
-         
-         <h2 class="sourcetext">Routes</h2>
-         <h4 class="routes">1,2,3,Deccan Park Shuttle</h4>
-         <h1 class="timings">9:00 AM</h1>
-         
-         
-     </div>
-     
+     </div>-->

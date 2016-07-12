@@ -6,7 +6,8 @@ import 'rxjs/Rx';
 import { Observable} from 'rxjs/Observable';
 let allbusesurl = CONFIG.baseurls.allbuses;
 let getplacesurl=CONFIG.baseurls.getplaces;
-let getselectedplace=CONFIG.baseurls.getselectedplace;
+let gettoadibatlaplaces=CONFIG.baseurls.gettoadibatlaplaces;
+let getfromadibatlaplaces=CONFIG.baseurls.getfromadibatlaplaces;
 @Injectable()
 export class BusService {
     
@@ -32,13 +33,22 @@ export class BusService {
           //return buses;
     }
   
-    public getSelectedSource(selectedplace) : Observable<any>{
-      console.log(getselectedplace+"?place="+selectedplace);
+    public getToAdibatla(selectedplace) : Observable<any>{
+      console.log(gettoadibatlaplaces+"?place="+selectedplace);
        this._spinner.show();
-      return this._http.get(getselectedplace+"?place="+selectedplace)
+      return this._http.get(gettoadibatlaplaces+"?place="+selectedplace)
           .map((res: Response) => res.json())
           .finally(()=>this._spinner.hide());
           //return buses;
     }
+      public getFromAdibatla(selectedplace) : Observable<any>{
+      console.log(getfromadibatlaplaces+"?place="+selectedplace);
+       this._spinner.show();
+      return this._http.get(getfromadibatlaplaces+"?place="+selectedplace)
+          .map((res: Response) => res.json())
+          .finally(()=>this._spinner.hide());
+          //return buses;
+    }
+    
 
 }
