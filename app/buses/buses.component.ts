@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild , OnDestroy ,OnChanges} from '@angular/core';
+import { Component, OnInit ,ViewChild , OnDestroy ,OnChanges} from '@angular/core';
 import { BusService } from './bus.service';
 import { BusListComponent } from './bus-list.component';
 import { Observable} from 'rxjs/Rx';
@@ -21,7 +21,7 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
     public srcadi:boolean = true;
     public srcloc:boolean = true;
     public destadi:boolean = true;
-    public destloc:boolean = true;
+     public destloc:boolean = true;
     @ViewChild(BusListComponent) filter;
     constructor(private _busservices : BusService ) {
        
@@ -58,6 +58,7 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
         this.destloc=true;
         this.destadi=false;
         this.srcloc=false;
+        this.sourcevalue="";
         document.getElementById("destplace").value="Select to location";
     }else{
          this.destloc=false;

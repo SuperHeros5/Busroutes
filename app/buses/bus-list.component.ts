@@ -12,6 +12,10 @@ import { LoggerService } from '../shared/logger.service';
 export class BusListComponent implements OnInit {
     @Input() buseslist;
     @Input() sourceselected;
+     @Input() public srcadi:boolean = true;
+    @Input() public srcloc:boolean = true;
+    @Input() public destadi:boolean = true;
+    @Input() public destloc:boolean = true;
     @Output() selectroute= new EventEmitter();
     constructor(private _log:LoggerService) { }
 

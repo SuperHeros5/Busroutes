@@ -67,7 +67,7 @@ body {
        left: 38%;
     text-align: center;
     width: 26%;
-   
+   color : #fdb200;
 }
 .routes{
      position: absolute; 
@@ -83,6 +83,12 @@ body {
 }
 .bluecolor{
     color:#061f5f;
+}
+.textleft{
+    text-align: left;
+}
+.textright{
+    text-align: right;
 }
 /* Customize container */
 @media (min-width: 768px) {
