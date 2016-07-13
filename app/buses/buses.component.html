@@ -15,7 +15,7 @@
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <label for="destplace" class="pull-left">To</label> 
 <select name="Source" value="Source" class="form-control"  id="destplace"  [disabled]="srcloc" (change)="getDstBusDetails()" >
-    <option [disabled]="!destloc">Select to location</option>
+    <option [disabled]="!destadi || !destloc">Select to location</option>
     <option value="Adibatla" [disabled]="!destadi">Adibatla</option>
     <option *ngFor="#source of busessources" value="{{source}}"  [disabled]="!destloc">{{source}}</option>
     
