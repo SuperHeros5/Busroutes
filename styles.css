@@ -1,6 +1,8 @@
 /* Space out content a bit */
 body {
- 
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-size: 16px;
+ padding-top:40px;
 }
 .bodystyle{
     background-image: url(bodybg.png);
@@ -18,8 +20,14 @@ body {
 }
 
 /* Custom page header */
-.header {
-  padding-bottom: 20px;
+.redcolor{
+    color:#aa0000;
+}
+.nav-pills > li.active > a{
+    background-color: #071e5d;
+}
+.navbar-default{
+    
  
    background-color: #fdb200;
 }
@@ -90,6 +98,13 @@ body {
 .textright{
     text-align: right;
 }
+.titlefont{
+    font-size: 2em;
+}
+.logosize{
+    width: 20%;
+    height: auto;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -141,4 +156,10 @@ body {
     text-align: center;
     
   }
+  
 }
+
+@media (max-width: 767px) { body{font-size:8px;} }
+@media (min-width: 768px) and (max-width: 991px ) { body{font-size:12px;} }
+@media (min-width: 992px ) and (max-width: 1199px) { body{font-size:14px;} }
+@media (min-width: 1200px) { body{font-size:16px;} }

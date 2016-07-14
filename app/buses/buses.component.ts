@@ -22,6 +22,7 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
     public srcloc:boolean = true;
     public destadi:boolean = true;
      public destloc:boolean = true;
+     
     @ViewChild(BusListComponent) filter;
     constructor(private _busservices : BusService ) {
        
@@ -76,9 +77,9 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
      
       let places=document.getElementById("destplace");
     let selectedvalue = places.options[places.selectedIndex].innerHTML;
-   
+   this.sourcevalue=selectedvalue;
      this._busservices.getFromAdibatla(selectedvalue)
      .subscribe(data => {this.buses=data;console.log(data);},error => console.log(error),()=>console.log("completed"));
-       this.sourcevalue=selectedvalue;
+       
         }
 }

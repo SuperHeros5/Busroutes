@@ -19,7 +19,7 @@ import { SearchComponent} from './common/search.component';
 })
 
 @Routes([
-    { path: 'from', component: BusesComponent},
+    { path: '', component: BusesComponent},
     { path: 'to', component:  BusListComponent}
 ])
 export class AppComponent implements OnInit {  
