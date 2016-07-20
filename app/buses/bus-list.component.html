@@ -38,7 +38,7 @@
    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 textleft">  
        <h3 [hidden]="destadi">Adibatla</h3>
        <h3 [hidden]="!destadi">{{sourceselected}}</h3>
-     <h5 [hidden]="!destadi" *ngIf="sourceselected"><span></span>({{buseslist?.landmark}})</h5>
+     <h5 [hidden]="!destadi" *ngIf="sourceselected"><span>Landmark:</span>{{buseslist?.landmark}}<a href="#" title="Get directions" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mapmodal" (click)="getmapdirections(buseslist?.landmark)"><span class="glyphicon glyphicon-screenshot"></span></a></h5>
      
    </div>
    
@@ -46,7 +46,9 @@
    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-offset-2 col-offset-2 col-offset-2 col-offset-2 col-offset-2 textright" *ngIf="sourceselected">
        <h3 [hidden]="destloc">Adibatla</h3> 
      <h3 [hidden]="!destloc">{{sourceselected}}</h3>
-     <h5 [hidden]="!destloc" *ngIf="sourceselected"><span></span>({{buseslist?.landmark}})</h5>
+     <h5 [hidden]="!destloc" *ngIf="sourceselected"><span>Landmark:</span>{{buseslist?.landmark}}<a href="#" title="Get directions" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mapmodal" (click)="getmapdirections(buseslist?.landmark)"><span class="glyphicon glyphicon-screenshot"></span></a></h5>
+  
+     
    </div>
      </div>
      <div class="row">
@@ -71,3 +73,24 @@
          
          
      </div>-->
+     
+     <div id="mapmodal" class="modal fade" role="dialog"  >
+         <div class="modal-dialog">
+             <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Direction to {{sourceselected}},{{landmarkloc}} </h4>
+                 </div>
+                 <div class="modal-body">
+                     <iframe width="500" height="450" frameborder="0" style="border:0"
+   [src]="landmarklocurl" allowfullscreen>
+                    </iframe>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 </div>
+             </div>
+         </div>
+         
+         
+     </div>

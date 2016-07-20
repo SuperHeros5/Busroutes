@@ -11,7 +11,7 @@
         <title>Bus Routes</title>
         
         <link  rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
-       
+       <link  rel="stylesheet" href="css\bootstrap-tour.min.css">
     <!-- Custom styles for this template -->
     <link href="styles.css" rel="stylesheet">
 
@@ -23,6 +23,7 @@
           <!-- 1. Load libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
            <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+           <script src="js\bootstrap-tour.min.js"></script>
             <script src="node_modules/es6-shim/es6-shim.min.js"></script>
             <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
 
@@ -34,7 +35,22 @@
 
             <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
             
-            
+             <script src='https://maps.googleapis.com/maps/api/js?v=3.exp' type='text/javascript'></script>
+             <script>
+                 $(document).on("click",".nav a", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+});
+var bod=document.body;
+$(document).on("scroll", function(){
+ if($(window).scrollTop()>100){
+     $(".navbar-header img").css({"height":"40px","width":"20%"});
+ }else{
+       $(".navbar-header img").css({"height":"50px","width":"25%"});
+ }
+});
+                 </script>
+                 
   <!-- 2. Configure SystemJS -->
   <script>
     System.config({
@@ -60,6 +76,26 @@
     });
     System.import('app/main')
       .then(null, console.error.bind(console));
+      // Instance the tour
+var tour = new Tour({
+  steps: [
+  {
+    element: "#my-element",
+    title: "Title of my step",
+    content: "Content of my step"
+  },
+  {
+    element: "#my-other-element",
+    title: "Title of my step",
+    content: "Content of my step"
+  }
+]});
+
+// Initialize the tour
+tour.init();
+
+// Start the tour
+tour.start();
   </script>   
             
     </head>

@@ -2,7 +2,7 @@
 <div class="jumbotron">
     <div class="row">
 <!--<label for="source">Source</label><input id="source" type="text" value="" [(ngModel)]="sourcevalue" placeholder="Enter source"/>-->
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="my-element">
    <label for="srcplace"  class="pull-left">From</label> 
 <select name="Source" value="Source" class="form-control"  id="srcplace" (change)="getSrcBusDetails()" >
     <option [disabled]="!srcloc" >Select From location</option>
@@ -13,7 +13,7 @@
 
 </div>
 
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="my-other-element">
     <label for="destplace" class="pull-left">To</label> 
 <select name="Source" value="Source" class="form-control"  id="destplace"  [disabled]="srcloc" (change)="getDstBusDetails()" >
     <option [disabled]="!destadi || !destloc">Select to location</option>

@@ -8,6 +8,8 @@ import { LoggerService } from './shared/logger.service';
 import { SpinnerService } from './shared/spinner.service';
 import { HeaderComponent} from './common/header.component';
 import { SearchComponent} from './common/search.component';
+import { AboutComponent} from './common/about.component';
+import { ContactComponent} from './common/contact.component';
 
 @Component({
    
@@ -20,7 +22,8 @@ import { SearchComponent} from './common/search.component';
 
 @Routes([
     { path: '', component: BusesComponent},
-    { path: 'to', component:  BusListComponent}
+    { path: 'about', component:  AboutComponent},
+    { path: 'contact', component:  ContactComponent}
 ])
 export class AppComponent implements OnInit {  
     constructor( ) {  
