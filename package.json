@@ -44,7 +44,8 @@
     "systemjs": "0.19.29",
     "typings": "0.8.1",
     "zone.js": "0.6.12",
-    "mime" : "~1.2.7"
+    "mime" : "~1.2.7",
+     "concurrently": "2.0.0"
   },
   "devDependencies": {
     "concurrently": "2.0.0",
