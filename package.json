@@ -42,7 +42,8 @@
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.29",
     "typings": "0.8.1",
-    "zone.js": "0.6.12"
+    "zone.js": "0.6.12",
+    "mime" : "~1.2.7"
   },
   "devDependencies": {
     "concurrently": "2.0.0",
