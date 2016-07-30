@@ -10,7 +10,7 @@
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "test": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
-    "start": "concurrent \"tsc:w\" \"node server.js\" "
+    "start": "concurrent \"npm run tsc:w\" \"node server.js\" "
   },
   "repository": {
     "type": "git",
