@@ -41,6 +41,7 @@ export class BusListComponent implements OnInit,AfterViewInit ,AfterContentCheck
      }
      public showPosition= (position) =>{
          this.currlocation=position.coords.latitude+","+position.coords.longitude;
+         this.currlocation="17.385,78.4867";
     
     }
      public getmapdirections= ( landmarkloc ) => {
