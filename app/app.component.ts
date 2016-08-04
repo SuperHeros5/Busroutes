@@ -16,7 +16,7 @@ import { ContactComponent} from './common/contact.component';
     selector: 'bus-route',
     templateUrl: 'app/app.component.html',
     styleUrls:['app/app.component.css'],
-    providers:[BusService,LoggerService,HTTP_PROVIDERS,SpinnerService,ROUTER_PROVIDERS],
+    providers:[BusService,LoggerService,HTTP_PROVIDERS,ROUTER_PROVIDERS],
     directives:[ROUTER_DIRECTIVES,HeaderComponent,SearchComponent]   
 })
 
@@ -26,8 +26,12 @@ import { ContactComponent} from './common/contact.component';
     { path: 'contact', component:  ContactComponent}
 ])
 export class AppComponent implements OnInit {  
-    constructor( ) {  
+    public spinner:boolean;
+    constructor(private _spinner:SpinnerService ) {  
+        this.spinner=_spinner.spinner;
+                  _spinner.getspinner.subscribe((value: boolean) => this.spinner=value)
      }
     ngOnInit() { 
+        
     }
 }

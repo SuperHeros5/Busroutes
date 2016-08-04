@@ -4,7 +4,7 @@ import { BusListComponent } from './bus-list.component';
 import { Observable} from 'rxjs/Rx';
 import { sourceFilter } from '../shared/sourcefilter.pipe';
 import {DROPDOWN_DIRECTIVES} from "ng2-bootstrap/ng2-bootstrap";
-
+import { SpinnerService } from '../shared/spinner.service';
 
 @Component({
     
@@ -24,7 +24,7 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
      public destloc:boolean = true;
      
     @ViewChild(BusListComponent) filter;
-    constructor(private _busservices : BusService ) {
+    constructor(private _busservices : BusService,private _spinner:SpinnerService ) {
        
      }
      public selectedroute=function(selected){
@@ -52,7 +52,7 @@ export class BusesComponent implements OnInit,OnDestroy,OnChanges {
         
     }
     public getSrcBusDetails(){
-     
+     this._spinner.hide();
       let places=document.getElementById("srcplace");
     let selectedvalue = places.options[places.selectedIndex].innerHTML;
     if(selectedvalue === "Adibatla"){
