@@ -165,7 +165,15 @@ body {
   
 }
 
-@media (max-width: 767px) { body{font-size:8px;} }
-@media (min-width: 768px) and (max-width: 991px ) { body{font-size:12px;} }
-@media (min-width: 992px ) and (max-width: 1199px) { body{font-size:14px;} }
-@media (min-width: 1200px) { body{font-size:16px;} }
+@media (max-width: 767px) { .titlefont {
+    font-size: 0.8em;
+} }
+@media (min-width: 768px) and (max-width: 991px ) { .titlefont {
+    font-size: 1.6em;
+}}
+@media (min-width: 992px ) and (max-width: 1199px) { .titlefont {
+    font-size: 2em;
+} }
+@media (min-width: 1200px) { .titlefont {
+    font-size: 2em;
+} }

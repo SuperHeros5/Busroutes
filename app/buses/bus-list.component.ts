@@ -41,14 +41,15 @@ export class BusListComponent implements OnInit,AfterViewInit ,AfterContentCheck
      }
      public showPosition= (position) =>{
          this.currlocation=position.coords.latitude+","+position.coords.longitude;
-         this.currlocation="17.385,78.4867";
+         //this.currlocation="17.385,78.4867";
     
     }
-     public getmapdirections= ( landmarkloc ) => {
-         this.landmarkloc=landmarkloc;
-         this.landmarklocurl="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBWgQr8HZk6JA-qbGHGScwyD8XDXOsE4J4&origin="+this.currlocation+"&destination="+this.sourceselected+landmarkloc+"&avoid=tolls|highways";
+     public getmapdirections= ( latitude,longitude ) => {
+         this.landmarkloc=latitude+","+longitude;
+         console.log(this.landmarkloc);
+         this.landmarklocurl="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBWgQr8HZk6JA-qbGHGScwyD8XDXOsE4J4&origin="+this.currlocation+"&destination="+this.landmarkloc+"&avoid=tolls|highways";
        console.log(this.landmarklocurl); 
        console.log(this.sourceselected);
-       console.log(landmarkloc);
+       
      }
 }
