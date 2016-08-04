@@ -25,8 +25,8 @@ export class BusListComponent implements OnInit,AfterViewInit ,AfterContentCheck
     constructor(private _log:LoggerService) { }
     
     ngOnInit() {}
-    ngAfterViewInit(){ }
-    ngAfterContentChecked(){ this.getlocation();}
+    ngAfterViewInit(){this.getlocation(); }
+    ngAfterContentChecked(){ }
  public details=function(source){
          alert(source);
          this._log.log(source);
@@ -34,6 +34,7 @@ export class BusListComponent implements OnInit,AfterViewInit ,AfterContentCheck
      }
      public getlocation(){
           if (navigator.geolocation) {
+              console.log("Geolocation is  supported by this browser.");
         navigator.geolocation.getCurrentPosition(this.showPosition);
     } else {
       console.log("Geolocation is not supported by this browser.");
@@ -42,7 +43,7 @@ export class BusListComponent implements OnInit,AfterViewInit ,AfterContentCheck
      public showPosition= (position) =>{
          this.currlocation=position.coords.latitude+","+position.coords.longitude;
          //this.currlocation="17.385,78.4867";
-    
+    console.log(this.currlocation);
     }
      public getmapdirections= ( latitude,longitude ) => {
          this.landmarkloc=latitude+","+longitude;
