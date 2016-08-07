@@ -1,6 +1,6 @@
 import { Component, OnInit,ViewChild , OnDestroy ,OnChanges} from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
-import { Routes , ROUTER_DIRECTIVES , ROUTER_PROVIDERS} from'@angular/router';
+import { Routes , ROUTER_DIRECTIVES , ROUTER_PROVIDERS } from '@angular/router';
 import { BusService } from './buses/bus.service';
 import { BusesComponent} from './buses/buses.component';
 import { BusListComponent} from './buses/bus-list.component';
@@ -10,7 +10,8 @@ import { HeaderComponent} from './common/header.component';
 import { SearchComponent} from './common/search.component';
 import { AboutComponent} from './common/about.component';
 import { ContactComponent} from './common/contact.component';
-
+import { LoginComponent} from './common/login.component';
+import { AdminFormComponent} from './common/adminform.component';
 @Component({
    
     selector: 'bus-route',
@@ -23,7 +24,9 @@ import { ContactComponent} from './common/contact.component';
 @Routes([
     { path: '', component: BusesComponent},
     { path: 'about', component:  AboutComponent},
-    { path: 'contact', component:  ContactComponent}
+    { path: 'contact', component:  ContactComponent},
+    { path: 'login', component:  LoginComponent},
+    { path: 'adminform', component:  AdminFormComponent}
 ])
 export class AppComponent implements OnInit {  
     public spinner:boolean;
