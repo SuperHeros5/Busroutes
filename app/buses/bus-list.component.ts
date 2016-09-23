@@ -13,6 +13,7 @@ export class BusListComponent implements OnInit,AfterViewInit ,AfterContentCheck
     
     @Input() buseslist;
     @Input() sourceselected;
+    @Input() weatherdata;
      @Input() public srcadi:boolean = true;
     @Input() public srcloc:boolean = true;
     @Input() public destadi:boolean = true;
