@@ -8,6 +8,7 @@ let allbusesurl = CONFIG.baseurls.allbuses;
 let getplacesurl=CONFIG.baseurls.getplaces;
 let gettoadibatlaplaces=CONFIG.baseurls.gettoadibatlaplaces;
 let getfromadibatlaplaces=CONFIG.baseurls.getfromadibatlaplaces;
+let getweather=CONFIG.baseurls.getweather;
 @Injectable()
 export class BusService {
     
@@ -49,6 +50,12 @@ export class BusService {
           .finally(()=>this._spinner.hide());
           //return buses;
     }
-    
+     public getWeather(latitude,longitude) : Observable<any>{
+         console.log(getweather+"/"+latitude,longitude);
+          return this._http.get(getweather+"/"+latitude+","+longitude)
+          .map((res: Response) => res.json())
+          .finally(()=>console.log("weather"));
+          
+    }
 
 }
