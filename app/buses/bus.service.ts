@@ -52,7 +52,7 @@ export class BusService {
     }
      public getWeather(latitude,longitude) : Observable<any>{
          console.log(getweather+"/"+latitude,longitude);
-          return this._http.get(getweather+"/"+latitude+","+longitude)
+          return this._http.get(getweather+"q="+latitude+"_"+longitude)
           .map((res: Response) => res.json())
           .finally(()=>console.log("weather"));
           
