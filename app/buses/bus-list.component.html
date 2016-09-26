@@ -30,7 +30,7 @@
    
    <div class="row">
      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">  
-      <h4  class="pull-right"><span>{{weatherdata?.current?.condition?.text}}</span> In <span [hidden]="destloc">Adibatla</span><span [hidden]="!destloc">{{sourceselected}}</span><span> ({{weatherdata?.current?.temp_c}} &deg;C) </span><img class="pull-right" ng-src="{{weatherdata?.current?.condition?.icon}}" height="40px" width="40px" alt="Raining"></h4>
+      <h4  class="pull-right"><span>{{weatherdata?.current?.condition?.text}}</span> In <span [hidden]="destloc">Adibatla</span><span [hidden]="!destloc">{{sourceselected}}</span><span> ({{weatherdata?.current?.temp_c}} &deg;C) </span><img class="pull-right" [src]="{{weatherdata?.current?.condition?.icon}}" height="40px" width="40px" alt="Raining"></h4>
          <h4 *ngIf="(weatherdata?.currently?.icon)==='partly-cloudy-day'" class="pull-right"><span>{{weatherdata?.currently?.summary}}</span> In <span [hidden]="destloc">Adibatla</span><span [hidden]="!destloc">{{sourceselected}}</span><span> ({{((weatherdata?.currently?.temperature)-32)*0.555 | number:'.0-1'}} &deg;C) </span><img class="pull-right" src="../../cloudy.gif" height="40px" width="40px" alt="Raining"></h4>
          <h4 *ngIf="(weatherdata?.currently?.icon)==='clear-day'" class="pull-right"><span>{{weatherdata?.currently?.summary}}</span> In <span [hidden]="destloc">Adibatla</span><span [hidden]="!destloc">{{sourceselected}}</span><span> ({{((weatherdata?.currently?.temperature)-32)*0.555 | number:'.0-1'}} &deg;C) </span><img class="pull-right" src="../../Sunny.png" height="40px" width="40px" alt="Raining"></h4>
      <img src="busroad.png" width="100%">
