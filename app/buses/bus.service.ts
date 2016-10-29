@@ -43,9 +43,9 @@ export class BusService {
           //return buses;
     }
       public getFromAdibatla(selectedplace) : Observable<any>{
-      console.log(getfromadibatlaplaces+"?place="+selectedplace);
+      console.log(getfromadibatlaplaces+selectedplace);
        this._spinner.show();
-      return this._http.get(getfromadibatlaplaces+"?place="+selectedplace)
+      return this._http.get(getfromadibatlaplaces+selectedplace)
           .map((res: Response) => res.json())
           .finally(()=>this._spinner.hide());
           //return buses;
