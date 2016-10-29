@@ -15,7 +15,7 @@ export let CONFIG={
         gettoadibatlaplaces:"https://sleet-shoulder.hyperdev.space/api/toadibatla/",
         getfromadibatlaplaces:"https://sleet-shoulder.hyperdev.space/api/fromadibatla/",
        // getweather:"https://api.darksky.net/forecast/61bc1053957b98072cf039ac033cabc9"
-          getweather:"http://api.apixu.com/v1/current.json?key=d0f9731bb63b4d4db0372112162609&"
+          getweather:"https://api.apixu.com/v1/current.json?key=d0f9731bb63b4d4db0372112162609&"
         
       /*   allbuses:"http://localhost:8092/AngularApp/restApi/helloworld/place?place=Gachibowli Junction",
         updatebus:"http://localhost:8092/AngularApp/restApi/helloworld/place?place=Gachibowli Junction",
