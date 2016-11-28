@@ -11,9 +11,13 @@ export let CONFIG={
         gettoadibatlaplaces:"http://ec2-52-66-113-33.ap-south-1.compute.amazonaws.com:8080/BusRoutesApi-0.0.1-SNAPSHOT/restApi/helloworld/toadibatla",
         getfromadibatlaplaces:"http://ec2-52-66-113-33.ap-south-1.compute.amazonaws.com:8080/BusRoutesApi-0.0.1-SNAPSHOT/restApi/helloworld/fromadibatla",*/
         
-         getplaces:"https://sleet-shoulder.hyperdev.space/api/toadibatla",
+      /*   getplaces:"https://sleet-shoulder.hyperdev.space/api/toadibatla",
         gettoadibatlaplaces:"https://sleet-shoulder.hyperdev.space/api/toadibatla/",
-        getfromadibatlaplaces:"https://sleet-shoulder.hyperdev.space/api/fromadibatla/",
+        getfromadibatlaplaces:"https://sleet-shoulder.hyperdev.space/api/fromadibatla/",*/
+        
+        getplaces:"https://nodeapibusai.herokuapp.com/api/toadibatla",
+        gettoadibatlaplaces:"https://nodeapibusai.herokuapp.com/api/toadibatla/",
+        getfromadibatlaplaces:"https://nodeapibusai.herokuapp.com/api/fromadibatla/",
        // getweather:"https://api.darksky.net/forecast/61bc1053957b98072cf039ac033cabc9"
           getweather:"https://api.apixu.com/v1/current.json?key=d0f9731bb63b4d4db0372112162609&"
         
